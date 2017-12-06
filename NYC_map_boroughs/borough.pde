@@ -96,7 +96,7 @@ public void setArrays(){
    }  
     }
     
-    public boolean mouseTest(int x, int y){
+   public boolean mouseTest(int x, int y){
     boolean found = false;
      for(int j = 0; j< pixelFinder.length; j++){
        for(int k = 0; k< pixelFinder[j].size(); k++){
@@ -114,7 +114,7 @@ public void setArrays(){
         break;
      }
    }
-      
+     return found; 
     }
  
   public String getName(){
