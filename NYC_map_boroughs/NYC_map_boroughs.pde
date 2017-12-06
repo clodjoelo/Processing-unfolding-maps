@@ -41,8 +41,10 @@ void setup(){
    for(Borough b : boroughs){
        b.shadeIn();
    }
-   for(Borough b : boroughs){
-       b.mouseTest(mouseX,mouseY);
+  for(Borough b : boroughs){
+     if(b.mouseTest(mouseX,mouseY)){
+       b.displayMouse();
+     }
    }
   }
   
