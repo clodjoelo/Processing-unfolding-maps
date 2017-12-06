@@ -3,6 +3,8 @@
 Conversion of shapefile lat lon boundary data (borbounds.csv) into pixel data
 on a displayed map.
 
+The code identifies all pixels inside the bounds and shades these specific areas
+
 The boundary data contains the New York City Boroughs
 
 -Manhattan
@@ -11,4 +13,4 @@ The boundary data contains the New York City Boroughs
 -Bronx
 -Statten Island
  
-Tests if the mouse position is inside the bounds 
+Run the mouse over the shading of boroughs to test the pixelbounds identification 
