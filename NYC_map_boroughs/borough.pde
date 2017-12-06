@@ -1,15 +1,14 @@
 
 class Borough{
   String name;
-  float lat;
-  float lon;
+  float latCenter;
+  float lonCenter;
   String acry;
   int index;
   color c;
   ArrayList<PVector> pixelsInside  = new ArrayList<PVector>();
   ArrayList<PVector>[] boundsCoOrds;
   ArrayList<Polygon>[] pixelFinder;
-  Polygon poly = new Polygon();
   ScreenPosition boroughOutline;
   int amountOfShapes;
   float shapeId = -1;
@@ -17,8 +16,8 @@ class Borough{
 
   Borough(String _name, float _lat, float _lon, String _acry,int _index,color _c,int _aOS){
       name = _name;
-      lat = _lat;
-      lon = _lon;
+      latCenter = _lat;
+      lonCenter = _lon;
       acry = _acry;
       index = _index;
       c = _c;
@@ -97,7 +96,7 @@ public void setArrays(){
    }  
     }
     
-    void mouseTest(int x, int y){
+    public boolean mouseTest(int x, int y){
     boolean found = false;
      for(int j = 0; j< pixelFinder.length; j++){
        for(int k = 0; k< pixelFinder[j].size(); k++){
@@ -108,13 +107,6 @@ public void setArrays(){
              PVector v = new PVector(xPos,yPos);
              pixelsInside.add(v);
              found = true;
-             fill(0,100);
-             String detail = "The mouse is inside "+name;
-             float wdth = textWidth(detail);
-             noStroke();
-             rect(x,y-10,wdth,12);
-             fill(255);
-             text("The mouse is inside "+name,x,y);
              break;
       } 
    }
@@ -151,6 +143,16 @@ public void setArrays(){
       pixels[loc] = color(c);
     }
     updatePixels();
+  }
+  
+  void displayMouse(){
+    fill(0,100);
+    String detail = "The mouse is inside "+name;
+    float wdth = textWidth(detail);
+    noStroke();
+    rect(mouseX,mouseY-10,wdth,12);
+    fill(255);
+    text("The mouse is inside "+name,mouseX,mouseY);         
   }
   
 
