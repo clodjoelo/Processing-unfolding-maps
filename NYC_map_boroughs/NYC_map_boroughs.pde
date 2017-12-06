@@ -44,8 +44,6 @@ void setup(){
    for(Borough b : boroughs){
        b.mouseTest(mouseX,mouseY);
    }
-   PVector mouse = new PVector(mouseX,mouseY);
-   de.fhpotsdam.unfolding.geo.Location mouseloc = map1.getLocation(mouse.x, mouse.y);
   }
   
 
